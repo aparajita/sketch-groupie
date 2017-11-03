@@ -2,20 +2,29 @@
   "name": "groupie",
   "version": "0.1.0",
   "engines": {
-    "sketch": ">=3.0"
+    "sketch": ">=4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aparajita/sketch-groupie.git"
   },
   "skpm": {
     "name": "Groupie",
     "manifest": "src/manifest.json",
-    "main": "plugin.sketchplugin"
+    "main": "Groupie.sketchplugin"
   },
   "scripts": {
     "build": "skpm-build",
+    "link": "skpm-link",
     "watch": "skpm-build --watch",
     "start": "skpm-build --watch --run",
     "postinstall": "npm run build && skpm-link"
   },
   "devDependencies": {
     "@skpm/builder": "^0.1.4"
+  },
+  "dependencies": {
+    "copy-webpack-plugin": "^4.2.0",
+    "lodash.merge": "^4.6.0"
   }
 }

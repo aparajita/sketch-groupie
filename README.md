@@ -1,56 +1,38 @@
 # Groupie
+Sketch provides a way to align layers to the artboard and to each other, but for some reason it does not provide a way to center or align layers with their parent group. Groupie fills in that gap.
 
-_This plugin was created using `skpm`. For a detailed explanation on how things work, checkout the [skpm Readme](https://github.com/skpm/skpm/blob/master/README.md)._
+## Install with Sketch Runner
 
-## CLI Commands
+With Sketch Runner, just go to the `install` command and search for `Groupie`. Runner allows you to manage plugins and do much more to speed up your workflow in Sketch. [Download Runner here](http://www.sketchrunner.com).
 
-``` bash
-# build with hot reload
-npm run watch
+<a href="http://bit.ly/SketchRunnerWebsite"><img width="160" height="41" src="http://bit.ly/RunnerBadgeBlue"></a>
 
-# build for production
-npm run build
-```
+## Manual Installation
+1. Go to the [latest release page](https://github.com/aparajita/sketch-groupie/releases/latest) and download `Groupie.sketchplugin.zip`.
+1. In Sketch, go to `Plugins > Manage Plugins...`, click on the gear icon, and select `Show Plugins Folder`.
+1. Un-zip the downloaded zip archive and then double-click the `Groupie.sketchplugin` file to install it.
 
-## Custom Configuration
+## Usage
 
-### Babel
+Select one or more groupable layers and then select an item from the `Plugins > Groupie` menu. All of the selected layers will be centered or aligned to their parent group in the chosen manner. This works even when selected layers are members of different groups.
 
-To customize Babel, you have two options:
+**Note:** If a layer is not within a group, it is centered or aligned to its artboard.
 
-* You may create a [`.babelrc`](https://babeljs.io/docs/usage/babelrc) file in your project's root directory. Any settings you define here will overwrite matching config-keys within skpm preset. For example, if you pass a "presets" object, it will replace & reset all Babel presets that skpm defaults to.
+### Key equivalents
 
-* If you'd like to modify or add to the existing Babel config, you must use a `webpack.skpm.config.js` file. Visit the [Webpack](#webpack) section for more info.
+For quick access, the following key equivalents are defined by default:
 
-### Webpack
+| Action | Keys |
+| --- | --- |
+| Center horizontally | `⌃⌘⇧H` |
+| Center vertically | `⌃⌘⇧V` |
+| Center | `⌃⌘⇧C` |
+| Align left | `⌃⌘⇧L` |
+| Align right | `⌃⌘⇧R` |
+| Align top | `⌃⌘⇧T` |
+| Align bottom | `⌃⌘⇧B` |
 
-To customize webpack create `webpack.skpm.config.js` file which exports function that will change webpack's config.
+## Acknowledgements
+Special thanks to other members of the Sketch plugin community for their invaluable foundational work:
 
-```js
-/**
- * Function that mutates original webpack config.
- * Supports asynchronous changes when promise is returned.
- *
- * @param {object} config - original webpack config.
- * @param {boolean} isPluginCommand - wether the config is for a plugin command or a resource
- **/
-module.exports = function (config, isPluginCommand) {
-  /** you can change config here **/
-}
-```
-
-## Debugging
-
-To view the output of your `console.log`, you have a few different options:
-* Open `Console.app` and look for the sketch logs
-* Use Safari's web inspector to debug your plugin's javascript context
-* Look at the `~/Library/Logs/com.bohemiancoding.sketch3/Plugin Output.log` file
-
-Skpm provides a convenient way to do the latter:
-
-```bash
-skpm log
-```
-
-The `-f` option causes `skpm log` to not stop when the end of logs is reached, but rather to wait for additional data to be appended to the input
-
+* Mathieu Dutour – [skpm](https://github.com/skpm/skpm)
