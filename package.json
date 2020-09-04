@@ -25,6 +25,6 @@
   },
   "dependencies": {
     "copy-webpack-plugin": "^4.2.0",
-    "lodash.merge": "^4.6.0"
+    "lodash.merge": "^4.6.2"
   }
 }
