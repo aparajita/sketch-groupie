@@ -21,7 +21,7 @@
     "postinstall": "npm run build && skpm-link"
   },
   "devDependencies": {
-    "@skpm/builder": "^0.1.4"
+    "@skpm/builder": "^0.1.7"
   },
   "dependencies": {
     "copy-webpack-plugin": "^4.2.0",
